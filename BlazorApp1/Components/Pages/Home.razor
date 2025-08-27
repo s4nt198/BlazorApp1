@@ -3,8 +3,8 @@
 
 <h1 class="title">TO DO LIST</h1>
 
-<input @bind="newTask" placeholder="Enter a task..." />
-<button @onclick="AddTask">Add</button>
+<input class="form-control d-inline w-25" @bind="newTask" placeholder="Enter a task..." />
+<button class="btn btn-success" @onclick="AddTask">Add</button>
 
 <ul>
     @foreach (var task in tasks)
