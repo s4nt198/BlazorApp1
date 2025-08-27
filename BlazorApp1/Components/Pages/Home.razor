@@ -1,11 +1,10 @@
 ﻿@page "/"
+@rendermode InteractiveServer
 
-<h1>"TO DO" LIST</h1>
+<h1 class="title">TO DO LIST</h1>
 
 <input @bind="newTask" placeholder="Enter a task..." />
 <button @onclick="AddTask">Add</button>
-
-<p>Tasks count: @tasks.Count</p>
 
 <ul>
     @foreach (var task in tasks)
@@ -13,16 +12,15 @@
         <li>@task</li>
     }
 </ul>
-
+    
 @code {
     private List<string> tasks = new();
     private string newTask = "";
 
     private void AddTask()
     {
-        tasks.Add(newTask + " (added)");
+        tasks.Add(newTask);
         newTask = "";
-     
+        StateHasChanged();
     }
 }
-
