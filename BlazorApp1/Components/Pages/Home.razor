@@ -1,10 +1,14 @@
 ﻿@page "/"
 @rendermode InteractiveServer
 
-<h1 class="title">TO DO LIST</h1>
+<PageTitle>TODO LIST</PageTitle>
 
-<input class="form-control d-inline w-25" @bind="newTask" placeholder="Enter a task..." />
-<button class="btn btn-success" @onclick="AddTask">Add</button>
+<h1 class="boxed-title">TODO LIST</h1>
+
+<EditForm Model="@AddTask" OnValidSubmit="AddTask">
+<input class="form-control d-inline-flex w-25" @bind="newTask" placeholder="Enter a task..." />
+<button type="submit" class="btn btn-dark" @onclick="AddTask">Add</button>
+</EditForm>
 
 <ul>
     @foreach (var task in tasks)
@@ -15,6 +19,7 @@
     
 @code {
     private List<string> tasks = new();
+
     private string newTask = "";
 
     private void AddTask()

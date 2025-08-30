@@ -50,14 +50,28 @@ h1:focus {
     border-color: #929292;
 }
 
-.title {
-    color: mediumblue;
+
+
+.boxed-title {
+    color: black;
+    font-size: 60px;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
     transition: color 0.3s ease;
+    border: 4px solid #333;
+    padding: 30px;
+    background-color: darkseagreen ;
+    display: ruby-base-container;
 }
 
 .title:hover {
-    color: blueviolet;
+    color: blue;
     transform: scale(1.1);
 }
+
+.placeholder {
+    text-align: center
+}
+
+
+
